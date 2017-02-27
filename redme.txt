@@ -1,0 +1,10 @@
+installation guide 
+1.copy and paste to laravel but outside of app folder 
+2.configure autoload in composer.json
+3.composer dump-autoload
+4.configure 
+ 'providers' => RoleCms\Aspect\AspectServiceProvider::class and
+  'aliases'  => "Aspect" => RoleCms\Aspect\AspectFacade::class
+   in app/config/app.php
+
+Have fun to use team :)
