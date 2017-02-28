@@ -1,0 +1,17 @@
+{
+	"name":"Aspect",
+	"description":"CMS Role Based Package for Laravel Not Stand Alone Package",
+	"keyword":["Role","Laravel"],
+	"license": "MIT",
+	"authors": [
+		{
+            "name": "Hein Htet",
+            "email": "heinhtetstarfall@gmail.com"
+        }
+    ],
+    "autoload":{
+    	"psr-4": {
+            "RoleCms\\": "src/"
+        },
+    }
+}

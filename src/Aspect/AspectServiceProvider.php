@@ -41,13 +41,23 @@ class AspectServiceProvider extends ServiceProvider
             return new Aspect($app);
         });
 
+    }
 
 
-        // $this->app->bind("App\ProviderInjection\Permission", function ($app) {
-        //     return new Permission($app);
+      /**
+     * Register the artisan commands.
+     *
+     * @return void
+     */
+    private function registerCommands()
+    {
+        $this->app->singleton('command.aspect.migration',function($app){
+            return new 
+        });
+
+        //  $this->app->singleton('command.entrust.migration', function ($app) {
+        //     return new MigrationCommand();
         // });
-
-        // $this->app->alias('Permission', 'App\ProviderInjection\Permission');
     }
 
 }
