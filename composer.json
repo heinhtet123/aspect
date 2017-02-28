@@ -6,7 +6,8 @@
 	"authors": [
 		{
             "name": "Hein Htet",
-            "email": "heinhtetstarfall@gmail.com"
+            "email": "heinhtetstarfall@gmail.com",
+            "role": "Developer"
         }
     ],
     "autoload":{

@@ -27,6 +27,8 @@ class AspectServiceProvider extends ServiceProvider
     public function register()
     {
         $this->registerPermission();
+
+        $this->mergeConfig();
     }
 
 
@@ -51,13 +53,20 @@ class AspectServiceProvider extends ServiceProvider
      */
     private function registerCommands()
     {
-        $this->app->singleton('command.aspect.migration',function($app){
-            return new 
-        });
+        // $this->app->singleton('command.aspect.migration',function($app){
+        //     //return new 
+        // });
 
         //  $this->app->singleton('command.entrust.migration', function ($app) {
         //     return new MigrationCommand();
         // });
+    }
+
+     private cdfunction mergeConfig()
+    {
+        $this->mergeConfigFrom(
+            __DIR__.'/../Config/aspectpermission.php', 'aspectpermission'
+        );
     }
 
 }
