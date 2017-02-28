@@ -6,5 +6,7 @@ installation guide
  'providers' => RoleCms\Aspect\AspectServiceProvider::class and
   'aliases'  => "Aspect" => RoleCms\Aspect\AspectFacade::class
    in app/config/app.php
+5.don't forget to type php artisan vendor:publish so that it will generate aspectpermission config file in 
+
 
 Have fun to use team :)

@@ -7,21 +7,26 @@ use RoleCms\Aspect\Aspect;
 
 class AspectServiceProvider extends ServiceProvider
 {
+
+     /**
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
+
     protected $defer = false;
     
-    /**
-     * Bootstrap the application services.
-     *
-     * @return void
-     */
-    public function boot()
+
+
+    
+    public function provides()
     {
-        $this->publishes([
-            __DIR__.'/../Config/aspectpermission.php' => app()->basePath() . '/config/aspectpermission.php',
-        ]);
+
     }
 
-    /**
+
+
+      /** Register first then boot 
      * Register the application services.
      *
      * @return void
@@ -32,6 +37,25 @@ class AspectServiceProvider extends ServiceProvider
 
         $this->mergeConfig();
     }
+
+
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->publishes([
+            __DIR__.'/../Config/aspectpermission.php' => app()->basePath() . '/config/aspectpermission.php',
+        ]);
+
+        $this->publishes([
+            __DIR__.'/middleware/AspectPermission.php' => app()->basePath() . '/app/Http/Middleware/AspectPermission.php',
+        ]);
+    }
+
+  
 
 
     /**
@@ -70,5 +94,8 @@ class AspectServiceProvider extends ServiceProvider
             __DIR__.'/../Config/aspectpermission.php', 'aspectpermission'
         );
     }
+
+
+
 
 }
