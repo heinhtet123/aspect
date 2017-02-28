@@ -16,7 +16,9 @@ class AspectServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->publishes([
+            __DIR__.'/../Config/aspectpermission.php' => app()->basePath() . '/config/aspectpermission.php',
+        ]);
     }
 
     /**
@@ -62,7 +64,7 @@ class AspectServiceProvider extends ServiceProvider
         // });
     }
 
-     private cdfunction mergeConfig()
+     private function mergeConfig()
     {
         $this->mergeConfigFrom(
             __DIR__.'/../Config/aspectpermission.php', 'aspectpermission'
