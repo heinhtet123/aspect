@@ -18,7 +18,6 @@ class Aspect
 	 public function user()
     {
        return $this->app->auth->user();
-       
     }
 
     public function RoleHaspermission()
