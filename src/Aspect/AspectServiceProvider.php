@@ -4,7 +4,7 @@ namespace RoleCms\Aspect;
 
 use Illuminate\Support\ServiceProvider;
 use RoleCms\Aspect\Aspect;
-
+use RoleCms\Command\MigrationCommand;
 class AspectServiceProvider extends ServiceProvider
 {
 
@@ -79,9 +79,9 @@ class AspectServiceProvider extends ServiceProvider
      */
     private function registerCommands()
     {
-        // $this->app->singleton('command.aspect.migration',function($app){
-        //     //return new 
-        // });
+        $this->app->singleton('command.aspect.migration',function($app){
+            return new MigrationCommand();
+        });
 
         //  $this->app->singleton('command.entrust.migration', function ($app) {
         //     return new MigrationCommand();
