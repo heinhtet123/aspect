@@ -3,6 +3,14 @@
 	"description":"CMS Role Based Package for Laravel Not Stand Alone Package",
 	"keyword":["Role","Laravel"],
 	"license": "MIT",
+    "require":{
+        "php": ">=5.5.0",
+        "illuminate/console": "~5.0",
+        "illuminate/support": "~5.0",
+    },
+    "require-dev": {
+        "illuminate/database": "~5.0",
+    },
 	"authors": [
 		{
             "name": "Hein Htet",
