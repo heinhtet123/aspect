@@ -14,5 +14,6 @@
     	"psr-4": {
             "RoleCms\\": "src/"
         }
-    }
+    },
+    "minimum-stability": "dev"
 }
