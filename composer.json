@@ -1,5 +1,5 @@
 {
-	"name":"Aspect",
+	"name":"h2/Aspect",
 	"description":"CMS Role Based Package for Laravel Not Stand Alone Package",
 	"keyword":["Role","Laravel"],
 	"license": "MIT",
