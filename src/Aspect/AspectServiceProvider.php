@@ -36,6 +36,8 @@ class AspectServiceProvider extends ServiceProvider
         $this->registerPermission();
 
         $this->mergeConfig();
+
+        $this->registerCommands();
     }
 
 
@@ -53,6 +55,8 @@ class AspectServiceProvider extends ServiceProvider
         $this->publishes([
             __DIR__.'/middleware/AspectPermission.php' => app()->basePath() . '/app/Http/Middleware/AspectPermission.php',
         ]);
+
+        $this->commands('command.aspect.migration');
     }
 
   
