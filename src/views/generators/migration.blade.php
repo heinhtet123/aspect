@@ -15,13 +15,13 @@ class AspectSetupTables extends Migration
     {
     	 
        
-    	Schema::create({{ $roles }}, function (Blueprint $table) {
+    	Schema::create('{{ $roles }}', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
             $table->timestamps();
         });
 
-        Schema::create({{ $roles_permission }}, function (Blueprint $table) {
+        Schema::create('{{ $roles_permission }}', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('role_id');
             $table->string('controller');
