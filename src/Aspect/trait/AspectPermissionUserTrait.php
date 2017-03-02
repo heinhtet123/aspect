@@ -7,8 +7,13 @@ trait AspectPermissionUserTrait
 {
 
 
-    
+    public function role()
+    {
+        return $this->belongsTo(Role::class,"role_id");
+    }
 
+
+    
     public function RoleHasPermission($current_url,$config){
         
             $methods=$config[$current_url["controller"]];

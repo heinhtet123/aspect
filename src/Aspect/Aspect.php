@@ -3,6 +3,8 @@
 namespace RoleCms\Aspect;
 use Illuminate\Support\Facades\Config;
 use App\Models\RolePermission;
+
+
 /**
 * 
 */
@@ -24,7 +26,7 @@ class Aspect
     {
     	if($user=$this->user())
     	{
-    		$config_permission=Config::get("rolespermission");
+    		$config_permission=$this->access_config();
     		$url=\Request::route()->getName();
 
     		//dd(\Route::getCurrentRoute()->getActionName());
@@ -69,5 +71,14 @@ class Aspect
 
     	return false;
     }
+
+
+    public function access_config()
+    {
+        return Config::get("aspectpermission");
+    }
+
+
+
     
 }

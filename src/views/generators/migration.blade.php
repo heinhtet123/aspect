@@ -30,6 +30,16 @@ class AspectSetupTables extends Migration
             $table->timestamps();
         });
 
+         Schema::create('{{ $user }}', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->integer('role_id');
+            $table->string('password', 60);
+            $table->rememberToken();
+            $table->timestamps();
+        });
+
     }
 
 

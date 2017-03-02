@@ -25,6 +25,7 @@ class MigrationCommand extends Command
 
 	  	$RolesTable="roles";
 	  	$RolesPermissionTable="role_permissions";
+	  	$UserTable="users";
 
 	  	$this->info( "Tables: roles,role_permissions");
 
@@ -42,7 +43,7 @@ class MigrationCommand extends Command
 
 
 
-	  		if($this->createMigration("roles","role_permissions"))
+	  		if($this->createMigration($RolesTable,$RolesPermissionTable,$UserTable))
 	  		{
 	  			$this->info("Migration successfully created!");
 	  		}else
@@ -57,11 +58,11 @@ class MigrationCommand extends Command
 	  	// end of function
 	  }
 
-	  protected function createMigration($roles,$roles_permission){
+	  protected function createMigration($roles,$roles_permission,$user){
 
 	  	$migrationFile = base_path("/database/migrations")."/".date('Y_m_d_His')."_aspect_setup_tables.php";
 
-	  	$data=compact("roles","roles_permission");
+	  	$data=compact("roles","roles_permission","user");
 	  	$output=$this->laravel->view->make("aspect::generators.migration")->with($data)->render();
 
 
