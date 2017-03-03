@@ -25,7 +25,7 @@ class MigrationCommand extends Command
 
 	  	$RolesTable="roles";
 	  	$RolesPermissionTable="role_permissions";
-	  	$UserTable="users";
+	  	// $UserTable="users";
 
 	  	$this->info( "Tables: roles,role_permissions");
 
@@ -43,7 +43,7 @@ class MigrationCommand extends Command
 
 
 
-	  		if($this->createMigration($RolesTable,$RolesPermissionTable,$UserTable))
+	  		if($this->createMigration($RolesTable,$RolesPermissionTable))
 	  		{
 	  			$this->info("Migration successfully created!");
 	  		}else
@@ -58,7 +58,7 @@ class MigrationCommand extends Command
 	  	// end of function
 	  }
 
-	  protected function createMigration($roles,$roles_permission,$user){
+	  protected function createMigration($roles,$roles_permission){
 
 	  	$migrationFile = base_path("/database/migrations")."/".date('Y_m_d_His')."_aspect_setup_tables.php";
 
