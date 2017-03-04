@@ -53,6 +53,11 @@ class AspectServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
+            __DIR__.'/../Config/aspect.php' => app()->basePath() . '/config/aspect.php',
+        ]);
+
+
+        $this->publishes([
             __DIR__.'/middleware/AspectPermission.php' => app()->basePath() . '/app/Http/Middleware/AspectPermission.php',
         ]);
 

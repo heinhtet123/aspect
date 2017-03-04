@@ -57,9 +57,9 @@ class MigrationCommand extends Command
 
 	  	// end of function
 	  }
-
+	  
 	  protected function createMigration($roles,$roles_permission){
-
+	  	
 	  	$migrationFile = base_path("/database/migrations")."/".date('Y_m_d_His')."_aspect_setup_tables.php";
 
 	  	$data=compact("roles","roles_permission","user");
