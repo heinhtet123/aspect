@@ -1,6 +1,6 @@
 <?php 
 
-namespace RoleCms\Aspect\trait;
+namespace RoleCms\Aspect\Traits;
 use App\Models\Role; 
 use App\Models\RolePermission;
 use Illuminate\Support\Facades\Config;
