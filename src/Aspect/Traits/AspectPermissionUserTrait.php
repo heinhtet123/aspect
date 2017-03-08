@@ -23,7 +23,7 @@ trait AspectPermissionUserTrait
              $rolepermission=new $class();
              
 
-            $rolespermission=$rolespermission->where("controller",$current_url["controller"])->where("role_id",$this->role->id)->where("method",$current_url["method"])->where("status",1)->get();
+            $rolespermission=$rolepermission->where("controller",$current_url["controller"])->where("role_id",$this->role->id)->where("method",$current_url["method"])->where("status",1)->get();
 
 
             if(in_array($current_url["method"], $methods) && !$rolespermission->isEmpty())
